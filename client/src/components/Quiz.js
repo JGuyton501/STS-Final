@@ -36,7 +36,7 @@ class Quizzes extends React.Component {
 			              
 			            </div>
 			            <div className="card-action center-align">
-			              <a className="waves-effect waves-light btn btn-small">Take Quiz</a>
+			              <a href=" " className="waves-effect waves-light btn btn-small">Take Quiz</a>
 			            </div>
 			          </div>
 			        </div>
@@ -46,17 +46,15 @@ class Quizzes extends React.Component {
 			        <div className="col s12 m4">
 			          <div className="card">
 			            <div className="card-content">
-			              <a href=" ">
-			              	<span className="card-title col s12 m6" style={{padding: 0}}>Quiz 2</span>
-			              	<span className="card-title col s12 m6 right-align" style={{padding: 0}}><i className="mini material-icons">keyboard_arrow_right</i></span>
-			              </a>
+			              <span className="card-title">Quiz 2</span>
 			              <p>Quiz if you are an one of those manager people</p>
 			              <br/>
 			              <p>Type: 3D</p>
 			              
 			            </div>
 			            <div className="card-action center-align">
-			              <a className="waves-effect waves-light btn btn-small">Take Quiz</a>
+			              <a href=" " className="waves-effect waves-light btn btn-small">Take Quiz</a>
+			              <a className="waves-effect waves-light btn btn-small">Results</a>
 			            </div>
 			          </div>
 			        </div>
@@ -75,7 +73,7 @@ class Quizzes extends React.Component {
 			              
 			            </div>
 			            <div className="card-action center-align">
-			              <a className="waves-effect waves-light btn btn-small">Take Quiz</a>
+			              <a href=" " className="waves-effect waves-light btn btn-small">Take Quiz</a>
 			            </div>
 			          </div>
 			        </div>
