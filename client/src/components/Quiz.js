@@ -8,7 +8,7 @@ class Quizzes extends React.Component {
     }
 
     componentDidMount() {
-  //     	$(document).ready(function(){
+  		// $(document).ready(function(){
 		//     $('.collapsible').collapsible();
 		// });
  	}		
@@ -24,70 +24,60 @@ class Quizzes extends React.Component {
 			        </div>
 			    </form>
 
-			    <ul className="collapsible" data-collapsible="accordion">
-			        <li>
-			          <div className="collapsible-header">
-			            <i className="material-icons">stars</i><span>Name of quiz1</span>
-			            <span className="right">Type: 3D</span>
+			    <div className="row">
+
+			        <div className="col s12 m4">
+			          <div className="card">
+			            <div className="card-content">
+			              <a href="#"><span className="card-title">Quiz 1</span></a>
+			              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+			              labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+			              <p>Type: 3D</p>
+			              
+			            </div>
+			            <div className="card-action center-align">
+			              <a className="waves-effect waves-light btn btn-small">Take Quiz</a>
+			            </div>
 			          </div>
-			          <div className="collapsible-body">
-		                <div className="col s12">
-		                  <div className="description">
-		                    <div className="title">
-		                      Description:
-		                    </div>
-		                    <div className="left-box">
-		                      Just for fun
-		                    </div>
-		                  </div>
-		                  <div className="recommendations" style={{marginTop: 10}}>
-		                    <div className="title">
-		                      Recommended Resources:
-		                    </div>
-		                    <div className="resources">
-		                      <div>
-		                        <a href="">Linke to source</a>
-		                        <a href="">Linke to source</a>
-		                        <a href="">Linke to source</a>
-		                      </div>
-		                    </div>
-		                  </div>
-		                </div>
-			          </div>
-			        </li>
+			        </div>
 
 
-			        <li>
-			          <div className="collapsible-header">
-			            <i className="material-icons">stars</i><span>Name of quiz2</span>
-			            <span className="right">Type: WUSTL Print</span>
+
+			        <div className="col s12 m4">
+			          <div className="card">
+			            <div className="card-content">
+			              <a href="#"><span className="card-title">Quiz 2</span></a>
+			              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+			              labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+			              <p>Type: 3D</p>
+			              
+			            </div>
+			            <div className="card-action center-align">
+			              <a className="waves-effect waves-light btn btn-small">Take Quiz</a>
+			            </div>
 			          </div>
-			          <div className="collapsible-body">
-		                <div className="col s12">
-		                  <div className="description">
-		                    <div className="title">
-		                      Description:
-		                    </div>
-		                    <div className="left-box">
-		                      Just for fun part 2
-		                    </div>
-		                  </div>
-		                  <div className="recommendations" style={{marginTop: 10}}>
-		                    <div className="title">
-		                      Recommended Resources:
-		                    </div>
-		                    <div className="resources">
-		                      <div>
-		                        <a href="">Linke to source</a>
-		                        <a href="">Linke to source</a>
-		                        <a href="">Linke to source</a>
-		                      </div>
-		                    </div>
-		                  </div>
-		                </div>
+			        </div>
+
+
+
+
+			        <div className="col s12 m4">
+			          <div className="card">
+			            <div className="card-content">
+			              <a href="#"><span className="card-title">Quiz 3</span></a>
+			              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+			              labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+			              <p>Type: 3D</p>
+			              
+			            </div>
+			            <div className="card-action center-align">
+			              <a className="waves-effect waves-light btn btn-small">Take Quiz</a>
+			            </div>
 			          </div>
-			        </li>
-			    </ul> 
+			        </div>
+
+
+			     </div>
 		    </div>
     	)
     }
