@@ -20,13 +20,13 @@ class Result extends React.Component {
 				<div>
 					<div className="row"> 
 					     <div className="col s12 m4">
-					     	<img src="https://media.giphy.com/media/IB9foBA4PVkKA/giphy.gif" style={{width: 300, height: 230}}/>
+					     	<img src="https://media.giphy.com/media/IB9foBA4PVkKA/giphy.gif"/>
 					     </div>
 					     <div className="col s12 m4">
-					     	<img src="https://media.tenor.com/images/4082212a3cbf41d49ed9c939c2fd5751/tenor.gif" style={{width: 300, height: 230}}/>
+					     	<img src="https://media.tenor.com/images/4082212a3cbf41d49ed9c939c2fd5751/tenor.gif"/>
 					     </div>
 					     <div className="col s12 m4">
-					     	<img src="https://media.giphy.com/media/IB9foBA4PVkKA/giphy.gif" style={{width: 300, height: 230}} />
+					     	<img src="https://media.giphy.com/media/IB9foBA4PVkKA/giphy.gif" />
 					     </div>
 					</div>
 					<div className="center-align">
