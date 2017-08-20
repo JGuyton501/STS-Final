@@ -18,7 +18,23 @@ class Result extends React.Component {
 		if(perfect){
 			return(
 				<div>
-				<h1> Perfect Score! </h1>
+					<div className="row"> 
+					     <div className="col s12 m4">
+					     	<img src="https://media.giphy.com/media/IB9foBA4PVkKA/giphy.gif" style={{width: 300, height: 230}}/>
+					     </div>
+					     <div className="col s12 m4">
+					     	<img src="https://media.tenor.com/images/4082212a3cbf41d49ed9c939c2fd5751/tenor.gif" style={{width: 300, height: 230}}/>
+					     </div>
+					     <div className="col s12 m4">
+					     	<img src="https://media.giphy.com/media/IB9foBA4PVkKA/giphy.gif" style={{width: 300, height: 230}} />
+					     </div>
+					</div>
+					<div className="center-align">
+						<h1>PERFECT SCORE! WAY TO GO!</h1>
+						<h4>You are so smart and stuff!</h4>
+						<p><i className="large material-icons green-text accent-4">check_circle</i></p>
+						<a href="/" className="waves-effect waves-light btn btn-small teal darken-2"> Home </a>
+					</div>
 				</div>
 				)
 		}
