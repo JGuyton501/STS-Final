@@ -6,6 +6,7 @@ import Quizzes from './components/Quiz';
 import Sample from './components/Sample';
 import Result from './components/Result';
 import Status from './components/Status';
+import Resources from './components/Resources';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -20,6 +21,7 @@ const Main = () => (
       <Route path = '/quizzes' component = {Quizzes}/>
       <Route path = '/status' component = {Status}/>
       <Route path = '/sample' component = {Sample}/>
+      <Route path = '/resources' component = {Resources}/>
       <Route exact path = '/results' component = {Result}/>
     </Switch>
   </main>
