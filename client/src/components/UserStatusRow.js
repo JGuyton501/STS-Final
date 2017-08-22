@@ -7,6 +7,7 @@ class UserStatusRow extends React.Component{
 	render(){
 		//console.log(this.props.index);
 		var self = this; 
+		console.log(self.props.quizzes);
 		if(this.props.index == 0 || this.props.index == 1){
 			return null;
 		}
