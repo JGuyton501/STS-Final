@@ -48,17 +48,17 @@ class Login extends Component {
 }
 
 handleLogin(history){
-  console.log(this.state);
   var username = this.state.username;
+  var self = this;
   //axios.post('/users/login', this.state);
   axios.post('/users/login', this.state)
   .then(function(res){
+    let admin = res.data.admin;
     //this.setState({login: res})
-    console.log(res.data.Success);
     if(res.data.Success){
-      history.push({
-        pathname: '/home',
-        state: {user: username}
+      axios.post('/users/getQuizzes')
+      .then(function(res){
+        self.props.updateUser(admin, username, res.data);;
       });
     }
   });

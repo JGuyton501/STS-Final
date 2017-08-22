@@ -18,6 +18,9 @@ class Login extends Component {
  handlePasswordChange(e){
    this.setState({password: e.target.value});
  }
+ componentDidMount(){
+  
+ }
 
  render() {
   return (
@@ -48,18 +51,12 @@ class Login extends Component {
 }
 
 handleLogin(history){
-  console.log(this.state);
   var username = this.state.username;
   //axios.post('/users/login', this.state);
   axios.post('/users/login', this.state)
   .then(function(res){
-    //this.setState({login: res})
-    console.log(res.data.Success);
     if(res.data.Success){
-      history.push({
-        pathname: '/home',
-        state: {user: username}
-      });
+      this.props.updateLoggedInUser(false, username);
     }
   });
 }

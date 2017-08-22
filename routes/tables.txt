@@ -1,0 +1,3 @@
+CREATE TABLE quizzes(quiz_id serial PRIMARY KEY, quiz VARCHAR (50) NOT NULL, description VARCHAR (500), type VARCHAR (20), key VARCHAR (50));
+
+CREATE TABLE credentials(id serial PRIMARY KEY, content VARCHAR(300), answerChoices text[], answer VARCHAR(5));

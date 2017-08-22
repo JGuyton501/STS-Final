@@ -8,14 +8,22 @@ class Result extends React.Component {
 		super();
 	}
 
+	updateScore(category){
+		axios.post('/users/updateQuizStatus', {category: category, username: this.props.details.username})
+		.then(function(res){
+
+		});
+	}
 
 	render(){
+		let category = this.props.location.state.category; 
 		let items = this.props.location.state.items;
 		let perfect = this.props.location.state.perfect;
 		let answers = this.props.location.state.answers;
 		let correctAnswers = this.props.location.state.correctAnswers;
 
 		if(perfect){
+			this.updateScore(category);
 			return(
 				<div>
 					<div className="row"> 

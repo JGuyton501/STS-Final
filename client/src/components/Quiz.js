@@ -1,90 +1,69 @@
 import React from 'react';
-// import $ from 'jquery';
+import Question from './Question';
+import axios from 'axios';
+import {withRouter} from "react-router-dom";
 
-class Quizzes extends React.Component {
-	constructor(props){
-        super(props);
-        console.log(this.props.location.search);
-    }
+class Quiz extends React.Component {
 
-    componentDidMount() {
-  		// $(document).ready(function(){
-		//     $('.collapsible').collapsible();
-		// });
- 	}		
-   
-    render(){
-    	return (
-    		<div className="container">
-	    		<form>
-			        <div className="input-field">
-			          <input id="search" type="search" required />
-			          <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
-			          <i className="material-icons">close</i>
-			        </div>
-			    </form>
+	constructor(){
+		super();
+		this.state = {items : [], answers: [], correctAnswers: []};
+	}
 
-			    <div className="row">
+	addAnswer(answer, index){
+		var tempArray = this.state.answers.slice();
+		tempArray[index] = answer;
+		this.setState({answers: tempArray});
+	}
 
-			        <div className="col s12 m4">
-			          <div className="card">
-			            <div className="card-content">
-			              <span className="card-title">Quiz 1</span>
-			              <p>Quiz description if you are only a student employee</p>
-			              <br/>
-			              <p>Type: 3D</p>
-			              
-			            </div>
-			            <div className="card-action center-align">
-			              <a className="waves-effect waves-light btn btn-small">Take Quiz</a>
-			            </div>
-			          </div>
-			        </div>
+	//Easy way to compare two arrays? 
+	submitQuiz(){
+		var tempArray = this.state.correctAnswers.slice();
+		for(var i = 0; i < this.state.items.length; i++){
+			tempArray.push(this.state.items[i].answer);
+		}
+		this.setState({correctAnswers: tempArray}, function(){
+			console.log(this.state.answers);
+			console.log(this.state.correctAnswers);
+			var perfect = true; 
+			for(var i = 0; i < this.state.answers.length; i++){
+				if(this.state.answers[i] != this.state.correctAnswers[i]){
+					perfect = false;
+				}
+			}
+			this.props.history.push({
+				pathname: '/results',
+				state: {category: this.props.location.state.category, answers: this.state.answers, correctAnswers: this.state.correctAnswers, perfect: perfect, items: this.state.items}
+			});
+		});
+	}
 
+	//Easy way to turn certain values into an array 
+	componentDidMount(){
+		var itemsArray = this.state.items.slice();
+		var self = this;
+		axios.post('/users/getQuestions', {category: this.props.location.state.category})
+		.then(function(res){
+			itemsArray = res.data;
+			self.setState({items: itemsArray});
+		});
+	}
 
-
-			        <div className="col s12 m4">
-			          <div className="card">
-			            <div className="card-content">
-			              <a href=" ">
-			              	<span className="card-title col s12 m6" style={{padding: 0}}>Quiz 2</span>
-			              	<span className="card-title col s12 m6 right-align" style={{padding: 0}}><i className="mini material-icons">keyboard_arrow_right</i></span>
-			              </a>
-			              <p>Quiz if you are an one of those manager people</p>
-			              <br/>
-			              <p>Type: 3D</p>
-			              
-			            </div>
-			            <div className="card-action center-align">
-			              <a className="waves-effect waves-light btn btn-small">Take Quiz</a>
-			            </div>
-			          </div>
-			        </div>
-
-
-
-
-			        <div className="col s12 m4">
-			          <div className="card">
-			            <div className="card-content">
-			              <span className="card-title">Quiz 3</span>
-			              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-			              labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-			              <br/>
-			              <p>Type: 3D</p>
-			              
-			            </div>
-			            <div className="card-action center-align">
-			              <a className="waves-effect waves-light btn btn-small">Take Quiz</a>
-			            </div>
-			          </div>
-			        </div>
-
-
-			     </div>
-		    </div>
-    	)
-    }
+	render(){
+		//console.log(this.state.items);
+		let items = this.state.items;
+		return (
+			<div className="container">
+				{items.map((item, index) => 
+					<Question key = {item.id} question = {item} questionNumber = {index} addAnswer = {this.addAnswer.bind(this)}/>)}
+				<div className="row">
+					<a><button className="waves-effect waves-light btn teal darken-2" onClick = {this.submitQuiz.bind(this)}>Submit</button></a>
+				</div>
+			</div>
+		)
+	}
 }
+export default withRouter(Quiz);
 
-export default Quizzes;
+
+
