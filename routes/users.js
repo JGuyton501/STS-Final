@@ -27,7 +27,7 @@ router.post('/login', function(req, res){
 router.post('/getQuestions', function(req, res){
 	var category = req.body.category; 
 	//console.log(category);
-	pg.client.query('SELECT * from servicedesk;', [], function (err, result) {
+	pg.client.query('SELECT * from ' + category + ';', [], function (err, result) {
 		res.json(result.rows);
 		return res.end();
 	});
