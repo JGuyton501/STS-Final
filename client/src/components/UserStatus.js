@@ -41,8 +41,9 @@ class UserStatus extends React.Component {
 
 	render(){
 		let quizzes = this.state.userQuizzes; 
-		console.log(self.props.details.quizzes);
+		
 		var self = this; 
+		console.log(self.props.details.quizzes);
 		if(quizzes == null){
 			return null;
 		}
