@@ -8,7 +8,7 @@ import axios from 'axios';
 class App extends React.Component{
 	constructor(){
 		super();
-		this.state = {username: '', admin: true, loggedIn: false, quizzes: []};
+		this.state = {username: '', admin: false, loggedIn: false, quizzes: []};
 	}
 	updateLoggedInUser(admin, username, quizzes){
 		var self = this;

@@ -21,7 +21,12 @@ class Result extends React.Component {
 		let perfect = this.props.location.state.perfect;
 		let answers = this.props.location.state.answers;
 		let correctAnswers = this.props.location.state.correctAnswers;
-
+		if(this.props.details.admin){
+			var button = <a href="/adminHome" className="waves-effect waves-light btn btn-small teal darken-2"> Home </a>
+		}
+		else{
+			var button = <a href="/home" className="waves-effect waves-light btn btn-small teal darken-2"> Home </a>
+		}
 		if(perfect){
 			this.updateScore(category);
 			return(
@@ -41,7 +46,7 @@ class Result extends React.Component {
 						<h1>PERFECT SCORE! WAY TO GO!</h1>
 						<h4>You are so smart and stuff!</h4>
 						<p><i className="large material-icons green-text accent-4">check_circle</i></p>
-						<a href="/" className="waves-effect waves-light btn btn-small teal darken-2"> Home </a>
+						{button}
 					</div>
 				</div>
 				)
