@@ -46,7 +46,6 @@ class Result extends React.Component {
 						<h1>PERFECT SCORE! WAY TO GO!</h1>
 						<h4>You are so smart and stuff!</h4>
 						<p><i className="large material-icons green-text accent-4">check_circle</i></p>
-						{button}
 					</div>
 				</div>
 				)
