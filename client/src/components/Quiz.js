@@ -16,6 +16,7 @@ class Quiz extends React.Component {
 		this.setState({answers: tempArray});
 	}
 
+
 	//Easy way to compare two arrays? 
 	submitQuiz(){
 		var tempArray = this.state.correctAnswers.slice();
@@ -49,6 +50,7 @@ class Quiz extends React.Component {
 		});
 	}
 
+
 	render(){
 		//console.log(this.state.items);
 		let items = this.state.items;
@@ -64,6 +66,7 @@ class Quiz extends React.Component {
 	}
 }
 export default withRouter(Quiz);
+
 
 
 

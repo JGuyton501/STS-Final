@@ -7,6 +7,9 @@ import Quiz from './components/Quiz';
 import Result from './components/Result';
 import UserStatus from './components/UserStatus';
 import AdminStatus from './components/AdminStatus';
+import Status from './components/Status';
+import Resources from './components/Resources';
+
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
